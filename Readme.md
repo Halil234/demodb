@@ -7,7 +7,7 @@
 
 # To search for special containers:
 
-```docker search mysql```
+``docker search mysql```
 
 # Set up the connection :
 
@@ -16,7 +16,9 @@ Von Friedl Lesch an Alle: (03:31 PM)
 
 # Take a look on the screenshot :
 
-#
+# to get the dependency :
+
+`mvn clean install`
 
 
 
