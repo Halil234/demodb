@@ -3,7 +3,7 @@ version: '3'
 services:
   spring_boot_mysql_database:
     image: mysql
-    container_name: spring_boot_mysql_database
+    container_name: spring_boot_mysql_database2
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: demo_devacademy
