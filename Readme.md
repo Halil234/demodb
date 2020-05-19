@@ -20,5 +20,10 @@ Von Friedl Lesch an Alle: (03:31 PM)
 
 `mvn clean install`
 
+# To download the dependecys from qaware:
+
+mvn de.qaware.maven:go-offline-maven-plugin:resolve-dependencies -DdownloadSources`
+
+
 
 
