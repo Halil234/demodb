@@ -4,11 +4,9 @@ import com.example.halil.demodb.entity.Person;
 import com.example.halil.demodb.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.*;
 
 @RestController
 public class PersonController {
@@ -27,4 +25,18 @@ public class PersonController {
 
 
     }
+
+    @RequestMapping(
+            method = RequestMethod.GET,
+            value = "/personOne/{id}",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public Optional<Person> getPersonOne(@PathVariable int id) {
+
+
+        return personRepository.findById(id);
+
+
+    }
+
 }

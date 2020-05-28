@@ -19,4 +19,9 @@ public class Person {
     @NotNull
     private String name;
 
+    @NotNull
+    private String hobby;
+
+
+
 }
