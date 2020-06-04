@@ -13,4 +13,6 @@ public interface PersonRepository extends JpaRepository<Person, Integer> {
 
 
 
+    @Override
+    <S extends Person> List<S> saveAll(Iterable<S> iterable);
 }

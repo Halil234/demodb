@@ -38,5 +38,20 @@ public class PersonController {
 
 
     }
+    @RequestMapping(
+            method = RequestMethod.POST,
+            value = "/personSave",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    @ResponseBody
+    public void savePersonOne(@RequestBody Map<String,String> body) {
+        System.out.println("Debug 1 this is the post " + body );
+
+        Person person = new Person();
+        person.setId(Integer.valueOf(body.get("id")));
+        person.setName(body.get("name"));
+
+
+    }
 
 }
