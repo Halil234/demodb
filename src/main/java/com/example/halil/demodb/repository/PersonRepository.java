@@ -11,6 +11,7 @@ public interface PersonRepository extends JpaRepository<Person, Integer> {
 
     Optional<Person> findById(ID id);
 
+    Optional<Person> findByName(String name);
 
 
     @Override

@@ -48,10 +48,12 @@ public class PersonController {
         System.out.println("Debug 1 this is the post " + body );
 
         Person person = new Person();
-        person.setId(Integer.valueOf(body.get("id")));
+        person.setId(body.get("id"));
         person.setName(body.get("name"));
 
+        List<Person> personList = new ArrayList<Person>(Arrays.asList(person));
 
+        personRepository.saveAll(personList);
     }
 
 }
