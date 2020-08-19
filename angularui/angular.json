@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angularui"
+    }
+  },
+  "defaultProject": "angularui",
+  "cli": {
+    "analytics": false
+  }
 }

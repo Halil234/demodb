@@ -43,6 +43,11 @@ SELECT * FROM demo_devacademy.t_person
 
 `mvn install -DskipTests`
 
+# To start the angular dev server :
+```ng serve```
+
+
+
 
 
 
