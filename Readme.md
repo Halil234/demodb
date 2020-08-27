@@ -43,6 +43,12 @@ SELECT * FROM demo_devacademy.t_person
 
 `mvn install -DskipTests`
 
+# To start the Spring Boot application in  terminal:
+
+`java -jar target/demodb-0.0.1-SNAPSHOT.jar` 
+
+
+
 
 
 
