@@ -9,9 +9,11 @@ import { Observable } from 'rxjs';
 export class UserService {
 
   private usersUrl: string;
+  private userAddUrl: string;
 
   constructor(private http: HttpClient) {
     this.usersUrl = 'http://localhost:8080/person';
+    this.userAddUrl = 'http://localhost:8080/personSave';
   }
 
   public findAll(): Observable<User[]> {
@@ -19,6 +21,6 @@ export class UserService {
   }
 
   public save(user: User) {
-    return this.http.post<User>(this.usersUrl, user);
+    return this.http.post<User>(this.userAddUrl, user);
   }
 }

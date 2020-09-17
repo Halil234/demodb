@@ -45,7 +45,18 @@ SELECT * FROM demo_devacademy.t_person
 
 # To start the Spring Boot application in  terminal:
 
-`java -jar target/demodb-0.0.1-SNAPSHOT.jar` 
+`java -jar target/demodb-0.0.1-SNAPSHOT.jar`
+
+# To start the ui 
+
+## naviate to the ui folder an start the ui with the ng serve command:
+
+```
+cd angularclient
+ng serve
+```
+
+
 
 
 

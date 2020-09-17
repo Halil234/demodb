@@ -14,6 +14,7 @@ public class PersonController {
     @Autowired
     PersonRepository personRepository;
 
+    @CrossOrigin
     @RequestMapping(
             method = RequestMethod.GET,
             path = "/person",
@@ -25,7 +26,7 @@ public class PersonController {
 
 
     }
-
+    @CrossOrigin
     @RequestMapping(
             method = RequestMethod.GET,
             value = "/personOne/{id}",
@@ -38,6 +39,9 @@ public class PersonController {
 
 
     }
+
+
+    @CrossOrigin
     @RequestMapping(
             method = RequestMethod.POST,
             value = "/personSave",
