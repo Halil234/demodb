@@ -48,7 +48,7 @@ public class PersonController {
     )
     @ResponseBody
     public void savePersonOne(@RequestBody Map<String,String> body) {
-        System.out.println("Debug 1 this is the post " + body );
+        System.out.println("Debug 1 this is the post of person " + body );
 
         Person person = new Person();
         person.setId(body.get("id"));

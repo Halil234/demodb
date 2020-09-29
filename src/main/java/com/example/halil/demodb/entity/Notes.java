@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 @Data
 @Entity  // you belong to database
@@ -17,7 +18,7 @@ public class Notes {
     @Id
     public Integer id;
 
-    public Date generate_date;
+    public LocalDateTime generate_date;
 
     public String notes;
 
