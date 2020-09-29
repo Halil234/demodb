@@ -56,6 +56,18 @@ cd angularclient
 ng serve
 ```
 
+## Create a new database table demo_devacademy.t_notes
+SELECT * FROM demo_devacademy.t_notes
+
+### Here the statement to insert one role in the database . Please take care that the id 
+### is now autoincremented :
+
+INSERT INTO demo_devacademy.t_notes (generate_date,notes,title,owner)
+VALUES ('2020-09-29 00:01:00' , 'notes_sample','title_sample','testowner');
+
+
+
+
 
 
 
