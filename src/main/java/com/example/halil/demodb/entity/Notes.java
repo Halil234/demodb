@@ -7,17 +7,23 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import java.sql.Date;
 
 @Data
 @Entity  // you belong to database
-@Table(name = "t_person")
-public class Person {
+@Table(name = "t_notes")
+public class Notes {
 
     @Id
     public Integer id;
 
-    @NotNull
-    public String name;
+    public Date generate_date;
+
+    public String notes;
+
+    public String title;
+
+    public String owner;
 
     public void setId(String id) {
         this.id = Integer.parseInt(id);

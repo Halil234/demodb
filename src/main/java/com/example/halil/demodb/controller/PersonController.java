@@ -24,7 +24,6 @@ public class PersonController {
 
         return personRepository.findAll();
 
-
     }
     @CrossOrigin
     @RequestMapping(
