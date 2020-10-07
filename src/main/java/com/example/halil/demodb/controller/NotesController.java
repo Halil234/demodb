@@ -43,7 +43,6 @@ public class NotesController {
 
         Notes notes = new Notes();
         // get the latestID
-        notes.setId(notesRepository.findAll().get().id);
         notes.setGenerate_date(LocalDateTime.now());
         notes.setNotes(body.get("notes"));
         notes.setTitle("default title");
@@ -52,10 +51,6 @@ public class NotesController {
         List<Notes> notesList = new ArrayList<Notes>(Arrays.asList(notes));
 
         notesRepository.saveAll(notesList);
-
     }
 
-    private int getLatestid() {
-        return notesRepository.findAll().get().id)
-    }
 }
