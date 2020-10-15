@@ -53,6 +53,7 @@ SELECT * FROM demo_devacademy.t_person
 
 ```
 cd angularclient
+npm install
 ng serve
 ```
 
