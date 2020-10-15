@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../entity/user';
-import {UserService} from '../service/user-service.service';
+import { User } from '../../entity/user';
+import {UserService} from '../../service/user-service.service';
 
 
 // @ts-ignore

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserAdminRoutingModule } from './user-admin-routing.module';
 
 @Component({
   selector: 'app-user-admin',
