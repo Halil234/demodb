@@ -8,13 +8,7 @@ import {UserAdminComponent} from "./user-admin.component";
 
 const routes: Routes = [
     { path: 'users', component: UserListComponent },
-    {
-        path: 'user-form',
-        component: MessagesComponent,
-        canActivate: [GuardService],
-        canLoad: [GuardService],
-        runGuardsAndResolvers: 'always',
-    },
+
     { path: 'user-admin', component: UserAdminComponent },
 ];
 
