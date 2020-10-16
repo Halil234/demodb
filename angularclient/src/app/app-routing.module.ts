@@ -6,9 +6,15 @@ import {UserAdminComponent} from "./user-admin/user-admin.component";
 
 
 const routes: Routes = [
-  { path: 'users', component: UserListComponent },
-  { path: 'user-form', component: UserFormComponent },
-  { path: 'user-admin', component: UserAdminComponent },
+  { path: '', redirectTo: 'user-admin/users', pathMatch: 'full'},
+  { path: 'user-admin',
+    component: UserAdminComponent,
+    children: [
+      { path: 'users', component: UserListComponent },
+      { path: 'user-form', component: UserFormComponent }
+    ]
+  },
+  { path: '', component: UserAdminComponent },
 ];
 
 @NgModule({
