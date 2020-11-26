@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { UserAdminRoutingModule } from './user-admin-routing.module';
 
 @Component({
-  selector: 'app-user-admin',
-  templateUrl: './user-admin.component.html',
-  styleUrls: ['./user-admin.component.scss']
+  selector: 'app-notes-admin',
+  templateUrl: './notes-admin.component.html',
+  styleUrls: ['./notes-admin.component.scss']
 })
-export class UserAdminComponent implements OnInit {
+export class NotesAdminComponent implements OnInit {
 
   title: string;
 

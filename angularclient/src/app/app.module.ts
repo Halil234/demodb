@@ -10,7 +10,8 @@ import { UserFormComponent } from './user-admin/user-form/user-form.component';
 import {FormsModule} from "@angular/forms";
 import { NavigationComponent } from './navigation/navigation.component';
 import { UserAdminComponent } from './user-admin/user-admin.component';
-import { NotesComponent } from './user-admin/notes/notes.component';
+import {NotesAdminComponent} from "./notes-admin/notes-admin.component";
+import {NotesListComponent} from "./notes-admin/notes-list/notes-list.component";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NotesComponent } from './user-admin/notes/notes.component';
     UserFormComponent,
     NavigationComponent,
     UserAdminComponent,
-    NotesComponent
+    NotesAdminComponent,
+    NotesListComponent
   ],
   imports: [
     BrowserModule,

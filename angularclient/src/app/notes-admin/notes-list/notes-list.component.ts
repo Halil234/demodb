@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {NotesService} from "../service/notes.service";
-import {Notes} from "../entity/notes";
+import {NotesService} from "../../service/notes.service";
+import {Notes} from "../../entity/notes";
 
 @Component({
   selector: 'app-notes',
-  templateUrl: './notes.component.html',
-  styleUrls: ['./notes.component.scss']
+  templateUrl: './notes-list.component.html',
+  styleUrls: ['./notes-list.component.scss']
 })
-export class NotesComponent implements OnInit {
+export class NotesListComponent implements OnInit {
 
   notes: Notes[];
 
