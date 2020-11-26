@@ -10,6 +10,7 @@ import { UserFormComponent } from './user-admin/user-form/user-form.component';
 import {FormsModule} from "@angular/forms";
 import { NavigationComponent } from './navigation/navigation.component';
 import { UserAdminComponent } from './user-admin/user-admin.component';
+import { NotesComponent } from './user-admin/notes/notes.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { UserAdminComponent } from './user-admin/user-admin.component';
     UserListComponent,
     UserFormComponent,
     NavigationComponent,
-    UserAdminComponent
+    UserAdminComponent,
+    NotesComponent
   ],
   imports: [
     BrowserModule,

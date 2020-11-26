@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserListComponent } from './user-admin/user-list/user-list.component';
 import {UserFormComponent} from "./user-admin/user-form/user-form.component";
 import {UserAdminComponent} from "./user-admin/user-admin.component";
+import {NotesComponent} from "./user-admin/notes/notes.component";
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
       { path: 'user-form', component: UserFormComponent }
     ]
   },
+  { path: 'notes', component: NotesComponent },
   { path: '', component: UserAdminComponent },
 ];
 
