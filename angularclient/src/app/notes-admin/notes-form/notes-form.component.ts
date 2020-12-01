@@ -4,11 +4,11 @@ import { UserService } from '../../service/user-service.service';
 import { User } from '../../entity/user';
 
 @Component({
-  selector: 'app-user-form',
-  templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.scss']
+  selector: 'app-notes-form',
+  templateUrl: './notes-form.component.html',
+  styleUrls: ['./notes-form.component.scss']
 })
-export class UserFormComponent {
+export class NotesFormComponent {
 
   user: User;
 
