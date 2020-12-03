@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UserService } from '../../service/user-service.service';
-import { User } from '../../entity/user';
+
+import {Notes} from "../../entity/notes";
+import {NotesService} from "../../service/notes.service";
 
 @Component({
   selector: 'app-notes-form',
@@ -10,20 +11,20 @@ import { User } from '../../entity/user';
 })
 export class NotesFormComponent {
 
-  user: User;
+  notes: Notes;
 
   constructor(
       private route: ActivatedRoute,
       private router: Router,
-      private userService: UserService) {
-    this.user = new User();
+      private userService: NotesService) {
+      this.notes = new Notes();
   }
 
   onSubmit() {
-    this.userService.save(this.user).subscribe(result => this.gotoUserList());
+    this.userService.save(this.notes).subscribe(result => this.gotoUserList());
   }
 
   gotoUserList() {
-    this.router.navigate(['..']);
+    this.router.navigate(['/notes-admin/notes-list']);
   }
 }
