@@ -12,6 +12,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { UserAdminComponent } from './user-admin/user-admin.component';
 import {NotesAdminComponent} from "./notes-admin/notes-admin.component";
 import {NotesListComponent} from "./notes-admin/notes-list/notes-list.component";
+import {NotesFormComponent} from "./notes-admin/notes-form/notes-form.component";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {NotesListComponent} from "./notes-admin/notes-list/notes-list.component"
     NavigationComponent,
     UserAdminComponent,
     NotesAdminComponent,
-    NotesListComponent
+    NotesListComponent,
+    NotesFormComponent
   ],
   imports: [
     BrowserModule,

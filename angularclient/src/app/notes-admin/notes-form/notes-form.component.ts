@@ -1,29 +1,29 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UserService } from '../../service/user-service.service';
-import { User } from '../../entity/user';
+import { NotesService } from '../../service/notes.service';
+import { Notes } from '../../entity/notes';
 
 @Component({
-  selector: 'app-user-form',
-  templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.scss']
+  selector: 'app-notes-form',
+  templateUrl: './notes-form.component.html',
+  styleUrls: ['./notes-form.component.scss']
 })
-export class UserFormComponent {
+export class NotesFormComponent {
 
-  user: User;
+  notes: Notes;
 
   constructor(
       private route: ActivatedRoute,
       private router: Router,
-      private userService: UserService) {
-    this.user = new User();
+      private notesService: NotesService) {
+    this.notes = new Notes();
   }
 
   onSubmit() {
-    this.userService.save(this.user).subscribe(result => this.gotoUserList());
+    this.notesService.save(this.notes).subscribe(result => this.gotoNotesList());
   }
 
-  gotoUserList() {
-    this.router.navigate(['..']);
+  gotoNotesList() {
+    this.router.navigate(['/notes-admin/notes-list']);
   }
 }

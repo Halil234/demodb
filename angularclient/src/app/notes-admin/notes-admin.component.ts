@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NotesAdminRoutingModule } from './notes-admin-routing.module';
+
 
 @Component({
   selector: 'app-notes-admin',

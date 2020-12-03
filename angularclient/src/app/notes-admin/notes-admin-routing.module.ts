@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UserListComponent } from './user-list/user-list.component';
-import {UserFormComponent} from "./user-form/user-form.component";
-import {UserAdminComponent} from "./user-admin.component";
+import { NotesListComponent } from './notes-list/notes-list.component';
+import {NotesFormComponent} from "./notes-form/notes-form.component";
+import {NotesAdminComponent} from "./notes-admin.component";
 
 
 
 const routes: Routes = [
-    { path: 'users', component: UserListComponent },
+    { path: 'notes-list', component: NotesListComponent },
 
-    { path: 'user-admin', component: UserAdminComponent },
+    { path: 'notes-form', component: NotesFormComponent },
 ];
 
 @NgModule({
@@ -17,5 +17,5 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 
-export class UserAdminRoutingModule {
+export class NotesAdminRoutingModule {
 }
