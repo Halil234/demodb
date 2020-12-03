@@ -25,6 +25,9 @@ public class Notes {
 
     public String owner;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Notebook notebook;
+
     public void setId(String id) {
         this.id = Integer.parseInt(id);
     }

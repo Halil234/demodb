@@ -52,5 +52,26 @@ public class NotesController {
 
         notesRepository.saveAll(notesList);
     }
+    @CrossOrigin
+    @RequestMapping(
+            method = RequestMethod.POST,
+            value = "/notestitleSave",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    @ResponseBody
+    public void saveNotesTitle(@RequestBody Map<String,String> body) {
+        System.out.printf("Debug 2 this is the post of notes " + body );
+
+        Notes notes = new Notes();
+        // get the latestID
+        notes.setGenerate_date(LocalDateTime.now());
+        notes.setNotes(body.get("notes"));
+        notes.setTitle(body.get("title"));
+        notes.setOwner("default user");
+
+        List<Notes> notesList = new ArrayList<Notes>(Arrays.asList(notes));
+
+        notesRepository.saveAll(notesList);
+    }
 
 }
