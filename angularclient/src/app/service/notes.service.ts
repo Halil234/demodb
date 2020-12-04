@@ -14,7 +14,7 @@ export class NotesService {
 
   constructor(private http: HttpClient) {
     this.notesUrl = 'http://localhost:8080/notes';
-    this.notesAddUrl = 'http://localhost:8080/notesSave';
+    this.notesAddUrl = 'http://localhost:8080/notestitleSave';
   }
 
   public findAll(): Observable<Notes[]> {

@@ -26,6 +26,7 @@ public class Notes {
     public String owner;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "notebook_id")
     private Notebook notebook;
 
     public void setId(String id) {

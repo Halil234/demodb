@@ -16,12 +16,12 @@ export class NotesFormComponent {
   constructor(
       private route: ActivatedRoute,
       private router: Router,
-      private userService: NotesService) {
+      private notesService: NotesService) {
       this.notes = new Notes();
   }
 
   onSubmit() {
-    this.userService.save(this.notes).subscribe(result => this.gotoUserList());
+    this.notesService.save(this.notes).subscribe(result => this.gotoUserList());
   }
 
   gotoUserList() {
