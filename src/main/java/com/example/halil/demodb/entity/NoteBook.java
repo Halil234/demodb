@@ -11,7 +11,7 @@ import java.util.UUID;
 @Data
 @Entity  // you belong to database
 @Table(name = "t_notebook")
-public class Notebook {
+public class NoteBook {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

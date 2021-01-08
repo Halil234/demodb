@@ -4,8 +4,6 @@ package com.example.halil.demodb.entity;
 import lombok.Data;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.sql.Date;
 import java.time.LocalDateTime;
 
 @Data
@@ -27,7 +25,7 @@ public class Notes {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "notebook_id")
-    private Notebook notebook;
+    private NoteBook notebook;
 
     public void setId(String id) {
         this.id = Integer.parseInt(id);
