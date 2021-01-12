@@ -15,7 +15,7 @@ public class NoteBook {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID id;
+    private Integer id;
 
     private String name;
 
