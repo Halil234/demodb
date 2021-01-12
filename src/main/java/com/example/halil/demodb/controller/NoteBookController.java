@@ -1,18 +1,17 @@
 package com.example.halil.demodb.controller;
 
 import com.example.halil.demodb.entity.NoteBook;
-import com.example.halil.demodb.entity.Notes;
 import com.example.halil.demodb.repository.NoteBookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.constraints.NegativeOrZero;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+@RestController
 public class NoteBookController {
 
     @Autowired
