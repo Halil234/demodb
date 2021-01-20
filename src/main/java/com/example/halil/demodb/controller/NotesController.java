@@ -1,6 +1,7 @@
 package com.example.halil.demodb.controller;
 
 import com.example.halil.demodb.entity.Notes;
+import com.example.halil.demodb.entity.Person;
 import com.example.halil.demodb.repository.NotesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -8,10 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.awt.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 public class NotesController {
@@ -28,6 +27,20 @@ public class NotesController {
     public List<Notes> getNotes() {
 
         return notesRepository.findAll();
+
+    }
+
+    @CrossOrigin
+    @RequestMapping(
+            method = RequestMethod.GET,
+            value = "/notes/{id}",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public Optional<Notes> getNotesOne(@PathVariable int id) {
+
+
+        return notesRepository.findById(id);
+
 
     }
 
