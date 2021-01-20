@@ -82,6 +82,7 @@ public class NotesController {
         notes.setTitle(body.get("title"));
         notes.setOwner("default user");
 
+
         List<Notes> notesList = new ArrayList<Notes>(Arrays.asList(notes));
 
         notesRepository.saveAll(notesList);

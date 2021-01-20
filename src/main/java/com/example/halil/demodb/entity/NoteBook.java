@@ -19,7 +19,6 @@ public class NoteBook {
 
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "notebook", cascade = CascadeType.ALL)
-    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "notebook", cascade = CascadeType.MERGE)
     private List<Notes> notes;
 }

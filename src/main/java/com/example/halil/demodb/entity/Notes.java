@@ -1,6 +1,8 @@
 package com.example.halil.demodb.entity;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -9,6 +11,8 @@ import java.time.LocalDateTime;
 @Data
 @Entity  // you belong to database
 @Table(name = "t_notes")
+@Builder
+@AllArgsConstructor
 public class Notes {
 
     @Id
@@ -27,7 +31,12 @@ public class Notes {
     @JoinColumn(name = "notebook_id")
     private NoteBook notebook;
 
+    public Notes() {
+
+    }
+
     public void setId(String id) {
         this.id = Integer.parseInt(id);
     }
+
 }
