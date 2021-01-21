@@ -27,7 +27,7 @@ public class Notes {
 
     public String owner;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinColumn(name = "notebook_id")
     private NoteBook notebook;
 

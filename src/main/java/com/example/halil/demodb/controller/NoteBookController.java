@@ -65,16 +65,19 @@ public class NoteBookController {
         int idNote = Integer.parseInt(body.get("notesId"));
         Optional<Notes> notes = notesController.getNotesOne(idNote);
 
-        Notes notestwo ;
-        notestwo = Notes.builder().notes("Notes").notebook(noteBook).title("title").id(100).owner("testuser")
-                .generate_date(LocalDateTime.now()).build();
+        Notes notesraw ;
+
+        notesraw = notes.get();
+
+        notesraw.setId("100");
+
 
         System.out.printf("Debug 2 this is the post of notes !!!!!" + notes.toString() );
-        noteBook.setNotes(Collections.singletonList(notestwo));
+        noteBook.setNotes(Collections.singletonList(notesraw));
 
         List<NoteBook> notesList = new ArrayList<NoteBook>(Arrays.asList(noteBook));
 
-        noteBookRepository.saveAndFlush(noteBook);
+        noteBookRepository.saveAll(notesList);
 
         System.out.println("Debug 8 " + noteBook.getNotes());
     }
