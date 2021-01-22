@@ -28,10 +28,10 @@ public class NoteBookController {
     @CrossOrigin
     @RequestMapping(
             method = RequestMethod.GET,
-            path = "/notebook",
+            path = "/notebookget",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public List<NoteBook> getNotes() {
+    public List<NoteBook> noteBookGet() {
 
         return noteBookRepository.findAll();
 
@@ -39,48 +39,21 @@ public class NoteBookController {
     @CrossOrigin
     @RequestMapping(
             method = RequestMethod.POST,
-            value = "/savenotebook",
+            value = "/notebooksave",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @ResponseBody
-    public void saveNoteBook(@RequestBody Map<String,String> body) {
+    public void noteBookSave(@RequestBody Map<String,String> body) {
         logger(body);
 
         NoteBook noteBook = new NoteBook();
         noteBook.setName(body.get("name"));
         noteBook.setNotes(null);
-
         List<NoteBook> notesList = new ArrayList<NoteBook>(Arrays.asList(noteBook));
 
         noteBookRepository.saveAll(notesList);
     }
-    @CrossOrigin
-    @RequestMapping(
-            method = RequestMethod.POST,
-            value = "/savenotebooknotes",
-            produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    @ResponseBody
-    public void saveNoteBookNotes(@RequestBody Map<String,String> body) {
-        logger(body);
 
-        NoteBook noteBook = new NoteBook();
-        noteBook.setName(body.get("name"));
-
-        // Generate an new Note and add it to the Notebook
-        Notes notes = new Notes();
-        notes.setGenerate_date(LocalDateTime.now());
-        notes.setNotes(body.get("notes"));
-        notes.setTitle(body.get("title"));
-        notes.setOwner("default user");
-        noteBook.addNote(notes) ;
-
-
-        List<NoteBook> notesList = new ArrayList<NoteBook>(Arrays.asList(noteBook));
-
-        noteBookRepository.saveAll(notesList);
-
-    }
     @CrossOrigin
     @RequestMapping(
             method = RequestMethod.POST,
@@ -92,25 +65,39 @@ public class NoteBookController {
 
         Integer noteBookId = Integer.parseInt(body.get("NotebookId"));
         Integer noteId = Integer.parseInt(body.get("NoteId"));
-
         NoteBook noteBook = new NoteBook();
         Notes notes = new Notes();
 
-        System.out.println("Debug 9 " + noteBookId.toString() );
-        System.out.println("Debug 10 " + noteId.toString() );
-
+        // Get the Entrys in the db
         noteBook =  noteBookRepository.findById(noteBookId).get();
         notes = notesRepository.findById(noteId).get();
 
-        // Move the notes in the Notebook
-        System.out.println("Debug 9 " + noteBook.toString() );
-        System.out.println("Debug 10 " + notes.toString() );
+        // Move the notes in the Notebook and Save in DB
         noteBook.addNote(notes) ;
-
         List<NoteBook> notesList = new ArrayList<NoteBook>(Arrays.asList(noteBook));
-
         noteBookRepository.saveAll(notesList);
+    }
+    @CrossOrigin
+    @RequestMapping(
+            method = RequestMethod.POST,
+            value = "/notebookrename",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    @ResponseBody
+    public void noteBookRename(@RequestBody Map<String,String> body) {
 
+        Integer noteBookId = Integer.parseInt(body.get("NotebookId"));
+        String notebookName = body.get("NotebookName");
+        NoteBook noteBook = new NoteBook();
+
+
+        // Get the Entrys in the db
+        noteBook =  noteBookRepository.findById(noteBookId).get();
+
+        // Set the new Name and Store in the Database
+        noteBook.setName(notebookName); ;
+        List<NoteBook> notesList = new ArrayList<NoteBook>(Arrays.asList(noteBook));
+        noteBookRepository.saveAll(notesList);
     }
 
     private void logger(@RequestBody Map<String, String> body) {
