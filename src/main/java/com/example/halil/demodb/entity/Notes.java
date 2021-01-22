@@ -1,6 +1,7 @@
 package com.example.halil.demodb.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,8 +12,6 @@ import java.time.LocalDateTime;
 @Data
 @Entity  // you belong to database
 @Table(name = "t_notes")
-@Builder
-@AllArgsConstructor
 public class Notes {
 
     @Id
@@ -27,8 +26,9 @@ public class Notes {
 
     public String owner;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "notebook_id")
+    @JsonBackReference
     private NoteBook notebook;
 
     public Notes() {
@@ -37,6 +37,18 @@ public class Notes {
 
     public void setId(String id) {
         this.id = Integer.parseInt(id);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Notes )) return false;
+        return id != null && id.equals(((Notes) o).getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
     }
 
 }

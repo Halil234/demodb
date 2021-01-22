@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.text.html.Option;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -61,24 +62,18 @@ public class NoteBookController {
         NoteBook noteBook = new NoteBook();
         noteBook.setName(body.get("name"));
 
-        // Get the id of needed Note and add it to the Notebook
-        int idNote = Integer.parseInt(body.get("notesId"));
-        Optional<Notes> notes = notesController.getNotesOne(idNote);
+        // Generate an new Note and add it to the Notebook
+        Notes notes = new Notes();
+        notes.setGenerate_date(LocalDateTime.now());
+        notes.setNotes(body.get("notes"));
+        notes.setTitle(body.get("title"));
+        notes.setOwner("default user");
+        noteBook.addNote(notes);
 
-        Notes notesraw ;
-
-        notesraw = notes.get();
-
-        notesraw.setId("100");
-
-
-        System.out.printf("Debug 2 this is the post of notes !!!!!" + notes.toString() );
-        noteBook.setNotes(Collections.singletonList(notesraw));
 
         List<NoteBook> notesList = new ArrayList<NoteBook>(Arrays.asList(noteBook));
 
         noteBookRepository.saveAll(notesList);
 
-        System.out.println("Debug 8 " + noteBook.getNotes());
     }
 }

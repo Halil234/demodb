@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
-public interface NoteBookRepository extends JpaRepository<NoteBook, UUID> {
+public interface NoteBookRepository extends JpaRepository<NoteBook, Integer> {
 }

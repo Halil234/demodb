@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -19,6 +20,16 @@ public class NoteBook {
 
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "notebook", cascade = CascadeType.MERGE)
-    private List<Notes> notes;
+    @OneToMany( mappedBy = "notebook", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Notes> notes = new ArrayList<>();
+
+    public void addNote(Notes note) {
+        notes.add(note);
+        note.setNotebook(this);
+    }
+
+    public void removeNote(Notes note) {
+        notes.remove(note);
+        note.setNotebook(null);
+    }
 }
