@@ -68,7 +68,7 @@ public class NoteBookController {
         notes.setNotes(body.get("notes"));
         notes.setTitle(body.get("title"));
         notes.setOwner("default user");
-        noteBook.addNote(notes);
+        noteBook.addNote(notes) ;
 
 
         List<NoteBook> notesList = new ArrayList<NoteBook>(Arrays.asList(noteBook));
