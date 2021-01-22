@@ -2,14 +2,13 @@ package com.example.halil.demodb.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Data
+@Getter
+@Setter
 @Entity  // you belong to database
 @Table(name = "t_notes")
 public class Notes {
