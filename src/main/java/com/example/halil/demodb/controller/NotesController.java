@@ -8,10 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.awt.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 public class NotesController {
@@ -28,6 +26,18 @@ public class NotesController {
     public List<Notes> getNotes() {
 
         return notesRepository.findAll();
+
+    }
+
+    @CrossOrigin
+    @RequestMapping(
+            method = RequestMethod.GET,
+            path = "/noteslast",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public Optional<Notes> getNoteslast() {
+
+        return notesRepository.findTopByOrderByIdDesc();
 
     }
 

@@ -12,7 +12,7 @@ public interface NotesRepository extends JpaRepository<Notes, Integer> {
 
     Optional<Notes> findById(ID id);
 
-
+    Optional<Notes> findTopByOrderByIdDesc();
 
     @Override
     <S extends Notes> List<S> saveAll(Iterable<S> iterable);

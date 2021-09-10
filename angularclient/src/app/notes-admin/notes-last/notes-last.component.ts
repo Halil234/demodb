@@ -15,7 +15,8 @@ export class NotesLastComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.notesService.findAll().subscribe(data => {
+    this.notesService.findLast().subscribe(data => {
+      console.log("Debug " + JSON.stringify(data))
       this.notes = data;
     });
   }
