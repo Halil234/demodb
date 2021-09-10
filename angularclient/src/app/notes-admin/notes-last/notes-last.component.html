@@ -1,0 +1,21 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Notes</th>
+        <th scope="col">Generated Date</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let note of notes">
+        <td>{{ note.id }}</td>
+        <td>{{ note.title }}</td>
+        <td>{{ note.notes }}</td>
+        <td>{{ note.generate_date }}</td>
+      </tbody>
+    </table>
+  </div>
+</div>
